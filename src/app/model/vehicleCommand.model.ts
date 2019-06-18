@@ -1,5 +1,4 @@
-export class VehicleModel{
-    public id: number;
+export class VehicleCommandModel{
     public typeVehicle: string;
     public plate: string;
     public engineVehicle: string;

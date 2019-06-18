@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {VehicleService} from './vehicle.service'
-import { VehicleModel } from '../model/vehicle.model';
+import { VehicleDtoModel } from '../model/vehicleDto.model';
 
 @Component({
   selector: 'app-vehicle',
@@ -10,7 +10,7 @@ import { VehicleModel } from '../model/vehicle.model';
   providers: [VehicleService]
 })
 export class VehicleComponent implements OnInit {
-  private vehicles: Array<VehicleModel>
+  private vehiclesDto: Array<VehicleDtoModel>
 
   constructor(private vehicleService: VehicleService) { }
 
@@ -20,7 +20,7 @@ export class VehicleComponent implements OnInit {
 
   private loadVehicles(): void {
     this.vehicleService.getVehicles().subscribe(res=>{
-      this.vehicles = res;
+      this.vehiclesDto = res;
     });
   }
 
