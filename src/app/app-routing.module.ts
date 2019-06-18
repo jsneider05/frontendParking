@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { UserComponent } from './user/user.component';
 import { AppComponent } from './app.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
 const routes: Routes = [
-  {path :'', redirectTo: '/userComponent', pathMatch: 'full'},
+  {path :'', redirectTo: '/vehicleComponent', pathMatch: 'full'},
   {path: 'appComponent', component: AppComponent},
-  {path: 'userComponent', component: UserComponent},
+  {path: 'vehicleComponent', component: VehicleComponent},
 ];
 
 @NgModule({
