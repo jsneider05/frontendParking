@@ -10,11 +10,6 @@ import { VehicleModel } from "./../model/vehicle.model";
 export class CreateVehicleService {
   constructor(private http: HttpClient) { }
 
-/*   public checkinVehicle(vehicle: VehicleModel): Observable<VehicleModel> {
-    return this.http.post<VehicleModel>("http://localhost:8080/vehicle/checkin", vehicle).pipe(
-        retry(1), catchError(this.responseError));
-  } */
-
   checkinVehicle(vehicle: VehicleModel){
     return this.http.post("http://localhost:8080/vehicle/checkin",vehicle).pipe(
       retry(1),
@@ -23,7 +18,6 @@ export class CreateVehicleService {
   }
 
   responseError(error) {
-    //console.log(error);
     let errorMessage = '';
     errorMessage = error.error.message;
     console.log(errorMessage);

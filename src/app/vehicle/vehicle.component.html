@@ -6,6 +6,7 @@
       <th scope="col">Tipo Vehiculo</th>
       <th scope="col">Placa</th>
       <th scope="col">Fecha de Ingreso</th>
+      <th scope="col">Dar Salida</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
       <td>{{item.typeVehicle}}</td>
       <td>{{item.plate}}</td>
       <td>{{item.checkIn}}</td>
+      <td><img src="../../assets/checkout_32px.png" class="editIcon" (click)="checkoutVehicle(item)"></td>
     </tr>
   </tbody>
 </table>

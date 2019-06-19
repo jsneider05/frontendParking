@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from "@angular/router";
 
 import {VehicleService} from './vehicle.service'
 import { VehicleDtoModel } from '../model/vehicleDto.model';
+import { PaymentModel } from '../model/payment.model';
+import { VehicleModel } from "./../model/vehicle.model";
 
 @Component({
   selector: 'app-vehicle',
@@ -12,7 +16,11 @@ import { VehicleDtoModel } from '../model/vehicleDto.model';
 export class VehicleComponent implements OnInit {
   private vehiclesDto: Array<VehicleDtoModel>
 
-  constructor(private vehicleService: VehicleService) { }
+  private payment: PaymentModel;
+  private plate : VehicleDtoModel["plate"];
+  
+
+  constructor(private vehicleService: VehicleService, private router: Router,private toast:ToastrService) { }
 
   ngOnInit() {
     this.loadVehicles();
@@ -20,8 +28,30 @@ export class VehicleComponent implements OnInit {
 
   private loadVehicles(): void {
     this.vehicleService.getVehicles().subscribe(res=>{
-      this.vehiclesDto = res;
-    });
+      if (res) {
+        this.vehiclesDto = res;
+      }
+    }, err => {
+      this.toast.error(err,"Error al listar vehiculos");
+
+    }); 
+  }
+
+  public checkoutVehicle(vehicleDto:VehicleDtoModel):void{
+    //sessionStorage.setItem('plate', JSON.stringify(vehicleDto.plate));
+    this.vehicleService.checkout(vehicleDto.plate).subscribe(res=>{
+      console.log(res);
+      if (res) {
+        this.payment = res;
+        //this.vehicleService.getVehicles();
+       //this.router.navigate(['/vehicleComponent']);
+       //this.toast.success("Su "+res['typeVehicle']+" de placa "+ res['plate'],"REGISTRO DE INGRESO");
+       location.reload();
+      }
+    }, err => {
+      this.toast.error(err,"Error al listar vehiculos");
+
+    }); 
   }
 
 }
