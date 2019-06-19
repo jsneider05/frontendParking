@@ -4,8 +4,6 @@ import {HttpClient} from "@angular/common/http";
 import { retry, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
-
-import { VehicleCommandModel } from './../model/VehicleCommand.model';
 import { VehicleModel } from "./../model/vehicle.model";
 
 

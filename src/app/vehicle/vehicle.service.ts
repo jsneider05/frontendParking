@@ -27,8 +27,9 @@ export class VehicleService {
     );
   }
 
-  public checkout(plate : VehicleDtoModel["plate"]):Observable<PaymentModel> {
-    return this.http.get<PaymentModel>("http://localhost:8080/vehicle/checkout/"+plate).pipe(
+  public checkout(plate : VehicleDtoModel):Observable<PaymentModel> {
+
+    return this.http.put<PaymentModel>("http://localhost:8080/vehicle/checkout",plate).pipe(
       retry(1),
       catchError(this.responseError)
     );

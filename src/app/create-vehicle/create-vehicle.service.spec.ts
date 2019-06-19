@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CreateVehicleService } from "./CreateVehicleService";
+import { CreateVehicleService } from "./create-vehicle.service";
 
 describe('CreateVehicleService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

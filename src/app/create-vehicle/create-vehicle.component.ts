@@ -4,7 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService } from 'primeng/primeng';
 
 import { VehicleModel } from '../model/vehicle.model';
-import { CreateVehicleService } from "./CreateVehicleService";
+import { CreateVehicleService } from "./create-vehicle.service";
+
 
 @Component({
   selector: 'app-create-vehicle',
@@ -17,6 +18,7 @@ export class CreateVehicleComponent implements OnInit {
   private vehicle: VehicleModel;
   private isValid: boolean = true;
   private message: String ="";
+  public ocultarCilindraje: boolean = false;
 
   constructor(private createVehicleService: CreateVehicleService, private router: Router,private toast:ToastrService) { 
     this.vehicle = new VehicleModel();
@@ -26,6 +28,7 @@ export class CreateVehicleComponent implements OnInit {
   }
 
   public checkinVehicle():void{
+    this.vehicle.plate = this.vehicle.plate.toLocaleUpperCase();
     this.createVehicleService.checkinVehicle(this.vehicle).subscribe(res =>{
       if (res) {
 
