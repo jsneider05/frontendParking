@@ -20,7 +20,7 @@
                   <td>{{item.typeVehicle}}</td>
                   <td>{{item.plate}}</td>
                   <td>{{item.checkIn | date : 'dd/MM/yyyy HH:mm'}}</td>
-                  <td><img src="../../assets/checkout_32px.png" class="editIcon" (click)="checkoutVehicle(item)"></td>
+                  <td><img src="../../assets/checkout_32px.png" class="editIcon" [id]="'checkout'+ item.plate" (click)="checkoutVehicle(item)"></td>
                 </tr>
               </tbody>
             </table>

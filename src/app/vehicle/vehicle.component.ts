@@ -45,7 +45,6 @@ export class VehicleComponent implements OnInit {
         //this.vehicleService.getVehicles();
        //this.router.navigate(['/vehicleComponent']);
        this.toast.success("$ "+this.payment,"VALOR A PAGAR");
-       //location.reload();
        this.loadVehicles();
       }
     }, err => {

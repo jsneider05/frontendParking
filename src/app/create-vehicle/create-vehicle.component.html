@@ -45,7 +45,7 @@
             <label class="mr-sm-2" for="typeVehicle"><span class="required">*</span>Tipo de vehiculo:</label>
             <select class="custom-select col-sm-8" name="typeVehicle" id="typeVehicle" [(ngModel)]="vehicle.typeVehicle"
               (ngModelChange)="mostrarCilindraje($event)">
-              <option selected>Seleccione el tipo de vehiculo...</option>
+              <option selected value="">Seleccione el tipo de vehiculo...</option>
               <option value="Carro">Carro</option>
               <option value="Moto">Moto</option>
             </select>
