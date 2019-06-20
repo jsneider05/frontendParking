@@ -1,3 +1,10 @@
-.clear{
-  padding: 15px;
+.botones-nav{
+  font-size: 20px;
 }
+
+.pie-de-pagina{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+

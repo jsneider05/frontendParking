@@ -1,4 +1,43 @@
-<div class="clear"></div>
-<button type="button" [routerLink]="['/vehicleComponent']" class="btn btn-primary">Vehiculos</button>
-<button type="button" [routerLink]="['/createVehicleComponent']" class="btn btn-success">Agregar vehiculo</button>
-<router-outlet></router-outlet>
+
+<!---------------------->
+<!-- BARRA NAVEGACIÓN -->
+<!---------------------->
+<nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
+    <div class="container">
+      <a [routerLink]="['/vehicleComponent']" class="navbar-brand">
+        <img src="../../assets/android-icon-48x48.png"  alt="Palabras claves">
+        <strong>JoAng</strong> Parking
+      </a>
+      <!---------------------------->
+      <!-- Botón Menú desplegable -->
+      <!---------------------------->
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación" aria-controls="menu-principal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!---------------------->
+      <!-- Menú desplegable -->
+      <!---------------------->
+      <div class="collapse navbar-collapse" id="menu-principal">
+        <ul class="navbar-nav ml-auto botones-nav">
+          <li class="nav-item"><a [routerLink]="['/vehicleComponent']" class="nav-link">Vehiculos</a></li>
+          <li class="nav-item"><a [routerLink]="['/createVehicleComponent']" class="nav-link">Agregar Vehiculo</a></li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+
+<!-- <div class="clear"></div>
+  <button type="button" [routerLink]="['/vehicleComponent']" class="btn btn-primary">Vehiculos</button>
+  <button type="button" [routerLink]="['/createVehicleComponent']" class="btn btn-success">Agregar vehiculo</button> -->
+
+  <router-outlet></router-outlet>
+
+<!--------------------------->
+<!-- SECCIÓN PIE DE PAGINA -->
+<!--------------------------->
+<footer class="pie-de-pagina text-center text-md-right bg-dark text-white">
+  <div class="container">
+    <p class="m-0 py-3">Copyright &copy; 2019. Todos los derechos reservados.</p>
+  </div>
+</footer>

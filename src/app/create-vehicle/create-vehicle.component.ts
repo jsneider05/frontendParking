@@ -18,17 +18,27 @@ export class CreateVehicleComponent implements OnInit {
   private vehicle: VehicleModel;
   private isValid: boolean = true;
   private message: String ="";
-  public ocultarCilindraje: boolean = false;
+  public ocultarCilindraje: boolean;
 
   constructor(private createVehicleService: CreateVehicleService, private router: Router,private toast:ToastrService) { 
     this.vehicle = new VehicleModel();
   }
 
   ngOnInit() {
+    this.ocultarCilindraje = false;
+  }
+
+  mostrarCilindraje(typeVehicle: string){
+    if (typeVehicle === "Moto") {
+      this.ocultarCilindraje = true;
+    } else {
+      this.ocultarCilindraje = false;
+    }    
   }
 
   public checkinVehicle():void{
-    this.vehicle.plate = this.vehicle.plate.toLocaleUpperCase();
+    console.log(this.vehicle);
+    this.vehicle.plate = this.vehicle.plate.toUpperCase();
     this.createVehicleService.checkinVehicle(this.vehicle).subscribe(res =>{
       if (res) {
 

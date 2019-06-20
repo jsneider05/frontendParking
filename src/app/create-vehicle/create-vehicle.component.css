@@ -1,8 +1,5 @@
-.clear{
-    margin: 15px;
-}
 .required{
-    color: red;
+    color:  #ff401c !important;
     font-weight: bolder;
 }
 .main-form{
@@ -17,3 +14,7 @@
 .estilo-placa{
     text-transform: uppercase;
 }
+.registrarVehiculo{
+    margin-top: 6rem;
+}
+
