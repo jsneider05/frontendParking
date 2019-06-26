@@ -2,51 +2,30 @@
 <!-- VEHICULOS RESGITRADOS -->
 <!--------------------------->
 <section class="py-4 vehiculosRegistrados">
-    <div class="container">
-      <h1 class="display-4 font-weight-bold text-primary text-center pb-4">Vehiculos registrados</h1>
-      <div class="row text-md-center">
-        <div class="col-12 text-md-left align-self-center">
-          <table class="table text-center">
-              <thead>
-                <tr>
-                  <th scope="col">Tipo Vehiculo</th>
-                  <th scope="col">Placa</th>
-                  <th scope="col">Fecha de Ingreso</th>
-                  <th scope="col">Dar Salida</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of vehiclesDto">
-                  <td>{{item.typeVehicle}}</td>
-                  <td>{{item.plate}}</td>
-                  <td>{{item.checkIn | date : 'dd/MM/yyyy HH:mm'}}</td>
-                  <td><img src="../../assets/checkout_32px.png" class="editIcon" [id]="'checkout'+ item.plate" (click)="checkoutVehicle(item)"></td>
-                </tr>
-              </tbody>
-            </table>
-        </div>
+  <div class="container">
+    <h1 class="display-4 font-weight-bold text-primary text-center pb-4">Vehiculos registrados</h1>
+    <div class="row text-md-center">
+      <div class="col-12 text-md-left align-self-center">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th scope="col">Tipo Vehiculo</th>
+              <th scope="col">Placa</th>
+              <th scope="col">Fecha de Ingreso</th>
+              <th scope="col">Dar Salida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of vehiclesDto">
+              <td>{{item.typeVehicle}}</td>
+              <td>{{item.plate}}</td>
+              <td>{{item.checkIn | date : 'dd/MM/yyyy HH:mm'}}</td>
+              <td><img src="../../assets/checkout_32px.png" class="editIcon" [id]="'checkout'+ item.plate"
+                  (click)="checkoutVehicle(item)"></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </section>
-
-<!-- 
-<h1>Vehiculos Registrados</h1>
-<div class="clear"></div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Tipo Vehiculo</th>
-      <th scope="col">Placa</th>
-      <th scope="col">Fecha de Ingreso</th>
-      <th scope="col">Dar Salida</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of vehiclesDto">
-      <td>{{item.typeVehicle}}</td>
-      <td>{{item.plate}}</td>
-      <td>{{item.checkIn | date : 'dd/MM/yyyy HH:mm'}}</td>
-      <td><img src="../../assets/checkout_32px.png" class="editIcon" (click)="checkoutVehicle(item)"></td>
-    </tr>
-  </tbody>
-</table> -->
+  </div>
+</section>

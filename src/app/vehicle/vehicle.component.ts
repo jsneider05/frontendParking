@@ -14,7 +14,6 @@ import { PaymentModel } from '../model/payment.model';
 })
 export class VehicleComponent implements OnInit {
   private vehiclesDto: Array<VehicleDtoModel>
-
   private payment: PaymentModel;
   
 
@@ -36,14 +35,10 @@ export class VehicleComponent implements OnInit {
   }
 
   public checkoutVehicle(vehicleDto:VehicleDtoModel):void{
-    
-    //sessionStorage.setItem('plate', JSON.stringify(vehicleDto.plate));
     this.vehicleService.checkout(vehicleDto).subscribe(res=>{
       console.log(res);
       if (res) {
-        this.payment = res;
-        //this.vehicleService.getVehicles();
-       //this.router.navigate(['/vehicleComponent']);
+       this.payment = res;
        this.toast.success("$ "+this.payment,"VALOR A PAGAR");
        this.loadVehicles();
       }

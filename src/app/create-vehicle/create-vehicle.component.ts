@@ -16,8 +16,6 @@ import { CreateVehicleService } from "./create-vehicle.service";
 export class CreateVehicleComponent implements OnInit {
 
   private vehicle: VehicleModel;
-  private isValid: boolean = true;
-  private message: String ="";
   public ocultarCilindraje: boolean;
 
   constructor(private createVehicleService: CreateVehicleService, private router: Router,private toast:ToastrService) { 

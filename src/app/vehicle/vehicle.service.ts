@@ -38,7 +38,6 @@ export class VehicleService {
   responseError(error) {
     let errorMessage = '';
     errorMessage = error.error.message;
-    console.log(errorMessage);
     return throwError(errorMessage);
   }
 }
